@@ -1,0 +1,15 @@
+import mysql.connector
+
+mydb = mysql.connector.connect(host ="localhost",user ="root",passwd="sri@vatsav840",database ="sri")
+
+mycursor = mydb.cursor()
+
+# mycursor.execute("alter table srivatsav add column gender varchar(20) ")
+sql = "insert into srivatsav (number, name, skills, age, weight, gender) values (%s, %s, %s, %s, %s, %s)"
+values = (122,'srivatsv','pythondev',25,70,'male')
+mycursor.execute(sql,values)
+# mycursor.execute("delete from srivatsav where number = 122")
+
+mydb.commit()
+# mycursor.close()
+# mydb.close
